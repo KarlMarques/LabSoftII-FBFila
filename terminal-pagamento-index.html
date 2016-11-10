@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>terminal-pagamento-index</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:800,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/standardize.css">
+  <link rel="stylesheet" href="css/terminal-pagamento-index-grid.css">
+  <link rel="stylesheet" href="css/terminal-pagamento-index.css">
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body class="body page-terminal-pagamento-index clearfix">
+  <div class="background">
+    <div class="terminalcaixa">
+      <button class="_button _button-1" type="submit" onClick="btnComprasOnClick()">Acessar carrinho de compras</button>
+      <button class="_button _button-2" type="submit" id="btnAtendimento" onClick="btnAtendimentoOnClick()">Finalizar Atendimento</button>
+      <p class="text text-1">Terminal de pagamento: Caixa 1</p>
+      <div class="container">
+        <p class="text _text text-2">Total:</p>
+        <p class="text _text text-3" id="valor"></p>
+      </div>
+    </div>
+  </div>
+
+<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAhKexGy_kOPZsSs7yjLdVSbytrb5EllK0",
+    authDomain: "webteste-d2bec.firebaseapp.com",
+    databaseURL: "https://webteste-d2bec.firebaseio.com",
+    storageBucket: "webteste-d2bec.appspot.com",
+    messagingSenderId: "664971268848"
+  };
+  firebase.initializeApp(config);
+</script>
+  <script src="scripts/terminal-pagamento-index.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</body>
+</html>

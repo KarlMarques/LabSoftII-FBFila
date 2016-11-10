@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>tempodeespera</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:700,800,400" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/standardize.css">
+  <link rel="stylesheet" href="css/tempodeespera-grid.css">
+  <link rel="stylesheet" href="css/tempodeespera.css">
+
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body class="body page-tempodeespera clearfix">
+  <div class="background">
+    <button onClick="sairFila()" class="_button" type="button">Sair da Fila</button>
+    <p class="text text-1" id = "posicao"> </p>
+    <div class="wrapper"></div> 
+    <p class="text text-2">Sua posição na fila é:</p>
+  </div>
+
+<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAhKexGy_kOPZsSs7yjLdVSbytrb5EllK0",
+    authDomain: "webteste-d2bec.firebaseapp.com",
+    databaseURL: "https://webteste-d2bec.firebaseio.com",
+    storageBucket: "webteste-d2bec.appspot.com",
+    messagingSenderId: "664971268848"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="scripts/main.js"></script>
+
+
+</body>
+</html>

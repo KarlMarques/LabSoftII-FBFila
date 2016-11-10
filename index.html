@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0">
+  <title>carrinho</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400,600" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/standardize.css">
+  <link rel="stylesheet" href="css/carrinho-grid.css">
+  <link rel="stylesheet" href="css/carrinho.css">
+
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.0/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.1.1/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.0/angularfire.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body class="body page-carrinho clearfix">
+  <div class="background">
+    <form class="cadastro clearfix">
+      <p class="text text-1">Seu carrinho</p>
+
+      <div class="container container-1">
+        <p class="text _text text-2">R$ 37,90</p>
+        <p class="text _text text-3">Total</p>
+      </div>
+
+      <div class="element element-1">
+        <div class="container container-2">
+          <div class="container container-3">
+            <button class="_button _button-1">-</button>
+            <button class="_button _button-2">+</button>
+            <p class="text _text text-4">2</p>
+          </div>
+          <p class="text _text text-5">R$ 19,90</p>
+          <p class="text _text text-6">Paçoquita SANTA HELENA 180g</p>
+        </div>
+        <button class="_button _button-3">Remover</button>
+        <div class="container _element container-4"></div>
+      </div>
+
+      <div class="element element-2">
+        <div class="container container-5">
+          <div class="container container-6">
+            <button class="_button _button-4">-</button>
+            <button class="_button _button-5">+</button>
+            <p class="text _text text-7">2</p>
+          </div>
+          <p class="text _text text-8">R$ 9,00</p>
+          <p class="text text-9">Ketchup HEINZ 512g</p>
+        </div>
+        <button class="_button _button-6">Remover</button>
+        <div class="container _element container-7"></div>
+      </div>
+
+      <div class="container container-8">
+        <button onClick="window.location.href='tempodeespera.html';" class="_button _button-7" type="button">Finalizar</button>
+        <button class="_button _button-8" type="submit">Limpar</button>
+      </div>
+
+    </form>
+  </div>
+
+
+<script src="https://www.gstatic.com/firebasejs/3.5.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyAhKexGy_kOPZsSs7yjLdVSbytrb5EllK0",
+    authDomain: "webteste-d2bec.firebaseapp.com",
+    databaseURL: "https://webteste-d2bec.firebaseio.com",
+    storageBucket: "webteste-d2bec.appspot.com",
+    messagingSenderId: "664971268848"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+</body>
+</html>
