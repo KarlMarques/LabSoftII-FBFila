@@ -8,15 +8,25 @@ function addUserToFirebaseDataBase() {
   
   var ref = firebase.database().ref('users/');
 
+  // Flag de usuario preferencial (1 para preferencial, 2 para comum)
+  // No final, o parametro deve ser passado pelo URL, semelhante ao id
+  var preferencial = Math.floor(2 * Math.random()) + 1;
+
   chave = ref.push().key;
 
-  ref.child(chave).set({
+  ref.child(chave).setWithPriority({
     username: chave,
-	ids: id,
+	  ids: id,
     caixa: "0",
-    fila: "1"
-  });
+    fila: "1",
+    preferencial: preferencial
+  }, preferencial);
   
+  // Outro metodo viavel
+  // ref.child(chave).orderByChild("preferencial")  
+
+  // Ou
+  // ref.orderByChild(chave + "/preferencial")
 
 }
 
@@ -26,6 +36,9 @@ function getUserList(){
 
 }
 
+
+// Para o metodo Desistencia de Fila, basta adicionar um botao
+// na interface de espera que tenha esse metodo como callback
 function sairFila(){
 
   firebase.database().ref('users/' + chave).remove();
@@ -35,7 +48,7 @@ function sairFila(){
 
 function verificaUserRemovido (snapshot) {
 
-firebase.database().ref('users/').once("value", function(snapshot) {
+  firebase.database().ref('users/').once("value", function(snapshot) {
      userDict = snapshot.val();
      var found = "false";
      for(i=0;  i < Object.keys(userDict).length; i++){
@@ -51,8 +64,6 @@ firebase.database().ref('users/').once("value", function(snapshot) {
   });
 
 }
-
-
 
 function verificaUserAdicionado (snapshot) {
 var valorFila;
@@ -74,17 +85,16 @@ function verificaUserDBExiste (snapshot) {
   }
 }
 
-
 firebase.database().ref().on('value', verificaUserDBExiste);
 firebase.database().ref('users/').on('child_removed', verificaUserRemovido);
 firebase.database().ref('users/').on('child_added', verificaUserAdicionado);
 
 firebase.database().ref('/').on("value", function(snapshot) {
-     userDict = snapshot.val();
+  userDict = snapshot.val();
 
-    i = Object.keys(userDict).length-1;
-    if (i == 1){
-      window.location="chamadaacliente.html?myVar=" + chave;
-    }
-       
-  });
+  i = Object.keys(userDict).length-1;
+  if (i == 1){
+    window.location="chamadaacliente.html?myVar=" + chave;
+  }
+     
+});
